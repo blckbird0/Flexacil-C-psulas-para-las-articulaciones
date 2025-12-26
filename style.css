@@ -1,0 +1,119 @@
+:root{
+  --brand:#1f3b56;     /* deep slate/navy from site’s tone */
+  --accent:#cc0000;    /* red urgency accent */
+  --green:#3e6a6f;     /* your requested green */
+  --bg:#ffffff;
+  --text:#1b1b1b;
+  --muted:#666;
+  --tile:#f7f9fc;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0; padding:0; font-family:'Inter',sans-serif; color:var(--text);
+  background: var(--bg);
+}
+
+/* Stripes */
+.top-stripe, .bottom-stripe{
+  position:fixed; left:0; width:100%; background:var(--green); color:#fff; z-index:100;
+}
+.top-stripe{ top:0; padding:14px 0; }
+.bottom-stripe{ bottom:0; padding:12px 0; }
+
+.top-inner, .bottom-inner{
+  max-width:1100px; margin:0 auto; padding:0 16px; display:flex; align-items:center; justify-content:space-between;
+}
+.brand{ font-weight:800; font-size:20px; letter-spacing:.5px }
+.tag{ font-weight:600; opacity:.9 }
+.offer{ font-weight:700 }
+.cta-mini{
+  background:var(--accent); color:#fff; border:none; border-radius:10px; padding:10px 14px; font-weight:800; cursor:pointer;
+}
+
+/* Container */
+.container{
+  max-width:1100px; margin:90px auto 80px auto; padding:24px 16px;
+}
+
+/* Hero */
+.hero{ display:grid; grid-template-columns: 1fr 1fr; gap:24px; align-items:center; }
+.product-main{ 
+  max-width:220px;   /* smaller product bottle */
+  width:100%; 
+  display:block; 
+  border-radius:16px; 
+  box-shadow:0 8px 24px rgba(0,0,0,.08) 
+}
+.price-box{ margin:12px 0 }
+.old-price{ display:block; color:var(--muted); text-decoration:line-through; margin-bottom:6px }
+.new-price{ display:block; color:var(--brand); font-weight:900; font-size:28px }
+.cta{
+  width:100%; background:linear-gradient(135deg,var(--green),var(--accent)); color:#fff; border:none; border-radius:14px;
+  padding:18px; font-weight:800; cursor:pointer; box-shadow:0 10px 24px rgba(204,0,0,.25);
+}
+.cta:hover{ transform:scale(1.03) }
+.note{ color:var(--muted); font-size:14px; margin-top:8px }
+
+.hero-right h1{ color:var(--brand); font-size:32px; font-weight:800; margin:8px 0 12px }
+.claims{ list-style:none; padding:0; margin:0 0 16px }
+.claims li{ background:var(--tile); border:1px solid #e6edf5; padding:12px 14px; border-radius:10px; margin-bottom:10px }
+
+.countdown{
+  display:flex; align-items:center; gap:10px; background:var(--accent); color:#fff; padding:12px 14px; border-radius:12px; font-weight:800;
+  width:max-content;
+}
+.clock{ font-size:20px }
+
+/* Benefits */
+.benefits{ margin:28px 0; display:grid; grid-template-columns: repeat(4, 1fr); gap:16px }
+.tile{ background:#fff; border:1px solid #e6edf5; border-radius:14px; padding:14px; text-align:center; box-shadow:0 6px 18px rgba(0,0,0,.06) }
+.tile img{ 
+  max-width:70px;   /* smaller benefit icons */
+  height:auto; 
+  display:block; 
+  margin:6px auto 10px 
+}
+.tile h3{ font-size:16px; color:var(--brand); margin:6px 0 }
+.tile p{ font-size:14px; color:#333; margin:0 }
+
+/* Actions */
+.actions{ margin:24px 0; text-align:center }
+.actions h2{ color:var(--brand); font-size:24px; margin-bottom:14px }
+.action-icons{ display:flex; gap:18px; justify-content:center; align-items:center; flex-wrap:wrap }
+.action-icons img{ 
+  max-width:180px;   /* smaller action PNGs */
+  width:100%; 
+  border-radius:12px; 
+  box-shadow:0 6px 18px rgba(0,0,0,.06) 
+}
+.cta.secondary{ max-width:340px; margin:16px auto 0 }
+
+/* Ingredients */
+.ingredients{ margin:24px 0 }
+.ingredients h2{ color:var(--brand); font-size:24px; margin-bottom:12px }
+.ingredients-list{ list-style:none; padding:0; margin:0 }
+.ingredients-list li{ background:var(--tile); border:1px solid #e6edf5; border-radius:10px; padding:12px 14px; margin-bottom:10px }
+.disclaimer{ font-size:13px; color:var(--muted); margin-top:10px }
+
+/* Reviews */
+.reviews{ margin:24px 0 }
+.reviews h2{ color:var(--brand); font-size:24px; margin-bottom:12px }
+.review{ display:flex; gap:12px; align-items:center; background:#fff; border:1px solid #e6edf5; border-radius:12px; padding:12px 14px; margin-bottom:10px }
+.review img{ 
+  max-width:50px;   /* smaller review avatars */
+  height:auto; 
+  border-radius:10px 
+}
+
+/* CTA block */
+.cta-block{ text-align:center; margin:24px 0 }
+
+@media (max-width:900px){
+  .hero{ grid-template-columns:1fr; }
+  .benefits{ grid-template-columns:1fr 1fr; }
+}
+@media (max-width:520px){
+  .benefits{ grid-template-columns:1fr; }
+  .top-inner, .bottom-inner{ flex-direction:column; gap:6px; }
+}
