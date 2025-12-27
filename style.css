@@ -1,116 +1,49 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cápsulas para las articulaciones</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <meta name="description" content="Cápsulas para apoyar articulaciones. Oferta limitada y compra online." />
-</head>
-<body>
+:root{
+  --brand:#1f3b56;
+  --accent:#cc0000;
+  --green:#3e6a6f;
+  --bg:#ffffff;
+  --text:#1b1b1b;
+  --muted:#666;
+  --tile:#f7f9fc;
+}
 
-  <!-- Barra superior -->
-  <header class="top-stripe">
-    <div class="top-inner">
-      <span class="brand">Cápsulas para las articulaciones</span>
-      <span class="tag">Oferta oficial — Solo online</span>
-    </div>
-  </header>
+*{box-sizing:border-box}
+body{
+  margin:0; padding:0; font-family:'Inter',sans-serif; color:var(--text);
+  background: var(--bg);
+}
 
-  <main class="container">
+/* Stripes */
+.top-stripe, .bottom-stripe{
+  position:fixed; left:0; width:100%; background:var(--green); color:#fff; z-index:100;
+}
+.top-stripe{ top:0; padding:14px 0; }
+.bottom-stripe{ bottom:0; padding:12px 0; }
 
-    <!-- Hero -->
-    <section class="hero">
-      <div class="hero-left">
-        <img class="product-main" src="https://feleo.net/content/bh9Tw6y4fpsj2tK/img/product-full.webp" alt="Cápsulas para las articulaciones" />
-        <div class="price-box">
-          <span class="old-price">Precio anterior: 318.000 COP</span>
-          <span class="new-price">Precio con rebaja: 159.000 COP</span>
-        </div>
-        <button class="cta" onclick="goToAffiliate()">Comprar con descuento</button>
-        <p class="note">Promoción por tiempo limitado</p>
-      </div>
+.top-inner, .bottom-inner{
+  max-width:1100px; margin:0 auto; padding:0 16px; display:flex; align-items:center; justify-content:space-between;
+}
+.brand{ font-weight:800; font-size:20px; letter-spacing:.5px }
+.tag{ font-weight:600; opacity:.9 }
+.offer{ font-weight:700 }
+.cta-mini{
+  background:var(--accent); color:#fff; border:none; border-radius:10px; padding:10px 14px; font-weight:800; cursor:pointer;
+}
 
-      <div class="hero-right">
-        <h1>Cápsulas para las articulaciones</h1>
-        <ul class="claims">
-          <li><strong>Alivio:</strong> Ayuda con inflamación, hinchazón y enrojecimiento.</li>
-          <li><strong>Movilidad:</strong> Apoyo a la movilidad en 5–7 días.</li>
-          <li><strong>Uso diario:</strong> Enfoque natural para bienestar articular.</li>
-        </ul>
-        <div class="countdown">
-          <span class="clock">⏰</span>
-          <span>La promoción termina en <span id="timer">05:59:59</span></span>
-        </div>
-      </div>
-    </section>
+/* Container */
+.container{
+  max-width:1100px; margin:90px auto 80px auto; padding:24px 16px;
+}
 
-    <!-- Beneficios -->
-    <section class="benefits">
-      <div class="tile">
-        <img src="https://feleo.net/content/bh9Tw6y4fpsj2tK/img/note-item-1.webp" alt="Nota 1" />
-        <h3>Inflamación e infecciones</h3>
-        <p>Apoyo para reducir dolor y recuperar función articular.</p>
-      </div>
-      <div class="tile">
-        <img src="https://feleo.net/content/bh9Tw6y4fpsj2tK/img/note-item-2.webp" alt="Nota 2" />
-        <h3>Cambios por la edad</h3>
-        <p>Soporte frente a desgaste y cambios degenerativos.</p>
-      </div>
-      <div class="tile">
-        <img src="https://feleo.net/content/bh9Tw6y4fpsj2tK/img/note-item-3.webp" alt="Nota 3" />
-        <h3>Traumas articulares</h3>
-        <p>Complemento para rehabilitación tras daños mecánicos.</p>
-      </div>
-      <div class="tile">
-        <img src="https://feleo.net/content/bh9Tw6y4fpsj2tK/img/note-item-5.webp" alt="Nota 5" />
-        <h3>Hábitos y sobrepeso</h3>
-        <p>Apoyo durante desgaste y deformación de cartílago.</p>
-      </div>
-    </section>
-
-    <!-- Acciones -->
-    <section class="actions">
-      <h2>Funciona sin operaciones, sin dolor, sin gastos extra</h2>
-      <div class="action-icons">
-        <img src="https://feleo.net/content/bh9Tw6y4fpsj2tK/img/action-1.webp" alt="Acción 1" />
-        <img src="https://feleo.net/content/bh9Tw6y4fpsj2tK/img/action-2.webp" alt="Acción 2" />
-        <img src="https://feleo.net/content/bh9Tw6y4fpsj2tK/img/action-3.webp" alt="Acción 3" />
-      </div>
-      <button class="cta secondary" onclick="goToAffiliate()">Empezar ahora</button>
-    </section>
-
-    <!-- Ingredientes -->
-    <section class="ingredients">
-      <h2>Ingredientes clave</h2>
-      <ul class="ingredients-list">
-        <li><strong>Harina de arándanos:</strong> Aporte antioxidante y apoyo general.</li>
-        <li><strong>Cúrcuma:</strong> Conocida por su papel en el bienestar.</li>
-        <li><strong>Uña de Gato:</strong> Planta tradicional de soporte.</li>
-        <li><strong>Cartílago de tiburón:</strong> Componente estructural.</li>
-        <li><strong>Colágeno hidrolizado:</strong> Soporte para tejidos.</li>
-        <li><strong>Magnesio:</strong> Mineral esencial.</li>
-      </ul>
-      <p class="disclaimer">Este producto es un suplemento dietario. No es un medicamento. Los resultados pueden variar según la persona.</p>
-    </section>
-
-    <!-- CTA -->
-    <section class="cta-block">
-      <button class="cta" onclick="goToAffiliate()">Comprar con descuento</button>
-      <p class="note">Compra oficial — Solo online</p>
-    </section>
-
-  </main>
-
-  <!-- Barra inferior -->
-  <footer class="bottom-stripe">
-    <div class="bottom-inner">
-      <span class="offer">Oferta limitada — Edad objetivo 40+</span>
-      <button class="cta-mini" onclick="goToAffiliate()">Ir al pedido</button>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
+/* Hero */
+.hero{ display:grid; grid-template-columns: 1fr 1fr; gap:24px; align-items:center; }
+.product-main{ max-width:220px; width:100%; display:block; border-radius:16px; box-shadow:0 8px 24px rgba(0,0,0,.08) }
+.price-box{ margin:12px 0 }
+.old-price{ display:block; color:var(--muted); text-decoration:line-through; margin-bottom:6px }
+.new-price{ display:block; color:var(--brand); font-weight:900; font-size:28px }
+.cta{
+  width:100%; background:linear-gradient(135deg,var(--green),var(--accent)); color:#fff; border:none; border-radius:14px;
+  padding:18px; font-weight:800; cursor:pointer; box-shadow:0 10px 24px rgba(204,0,0,.25);
+}
+.cta:hover{ transform:scale(1.03) }
